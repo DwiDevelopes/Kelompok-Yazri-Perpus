@@ -55,6 +55,14 @@ CREATE TABLE admin (
     email VARCHAR(100) UNIQUE NOT NULL
 );
 
+CREATE TABLE user (
+    id_admin INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    nama_lengkap VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL
+);
+
 -- Insert data contoh
 INSERT INTO kategori (nama_kategori) VALUES 
 ('Teknologi'), ('Sejarah'), ('Matematika'), ('Sastra'), ('Filsafat');
@@ -77,6 +85,9 @@ INSERT INTO peminjaman (id_buku, id_anggota, tanggal_pinjam, tanggal_kembali, st
 
 INSERT INTO admin (username, password, nama_lengkap, email) VALUES
 ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Admin Perpus', 'admin@perpustakaan.com');
+
+INSERT INTO user (username, password, nama_lengkap, email) VALUES
+('user', 'siswa', 'User Perpus', 'user@perpustakaan.com');
 -- Password: password
 
 -- Tambah kolom gambar ke tabel buku
